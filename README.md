@@ -3,7 +3,7 @@
 - Interactive app: [cintel-04-reactive](https://jordan-wheeler7.shinyapps.io/cintel-04-reactive/)
 - Repository: [cintel-04-reactive](https://github.com/jordanwheeler7/cintel-04-reactive)
 - Author: [Jordan Wheeler](https://github.com/jordanwheeler7)
-- Module: 4
+- Module: 4 Assignment
 
 -----
 
