@@ -21,7 +21,6 @@ install these to your default Python using the commands below.
 ```shell
 python -m pip install --upgrade pip wheel
 python -m pip install --upgrade black ruff pyright
-python -m pip install --upgrade rsconnect-python
 ```
 
 You must have reconnect-python installed for the next step.
