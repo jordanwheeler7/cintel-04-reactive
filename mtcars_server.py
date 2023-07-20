@@ -115,7 +115,7 @@ def get_mtcars_server_functions(input, output, session):
         return plotnine_plot
     
     @output
-    @render.widget
+    @render_widget
     def mtcars_plot3():
         df = reactive_df.get()
         plotly_express_plot2 = px.scatter(df, x="mpg", y="hp", symbol ="cyl", size="wt")
