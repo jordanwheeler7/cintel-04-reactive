@@ -32,7 +32,11 @@ def get_mtcars_server_functions(input, output, session):
     reactive_df = reactive.Value()
 
     @reactive.Effect
-    @reactive.event(input.MTCARS_MPG_RANGE)
+    @reactive.event(
+        input.MTCARS_MPG_RANGE,
+        input.MT_CARS_MAX_HP,
+        input.MT_CARS_CYLINDERS
+    )
     def _():
         df = original_df.copy()
 
