@@ -54,7 +54,7 @@ def get_mtcars_server_functions(input, output, session):
         You must be familiar with the dataset to know the column names.
         """
 
-        filtered_df = df[(df["mpg"] >= input_min) & (df["mpg"] <= input_max) & (df["hp"] <= input.MT_CARS_MAX_HP())]
+        df = df[(df["mpg"] >= input_min) & (df["mpg"] <= input_max) & (df["hp"] <= input.MT_CARS_MAX_HP())]
         
         display_cylinders = []
         if input.MT_CARS_CYLINDERS_4():
@@ -68,7 +68,7 @@ def get_mtcars_server_functions(input, output, session):
         df = df[cylinders_filter]
 
         # Set the reactive value
-        reactive_df.set(filtered_df)
+        reactive_df.set(df)
 
     @output
     @render.text
