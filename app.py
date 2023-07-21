@@ -90,7 +90,7 @@ def server(input, output, session):
     get_mtcars_server_functions(input, output, session)
     get_penguins_server_functions(input, output, session)
     get_relationships_server_functions(input, output, session)
-    get_flights_server_functions(input, output, session)
+    get_summer_server_functions(input, output, session)
 
 
 # app = App(app_ui, server, debug=True)

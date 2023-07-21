@@ -23,6 +23,12 @@ def get_summer_inputs():
         ui.input_checkbox("SUMMER_MEDAL_GOLD", "Gold Medal", value=True),
         ui.input_checkbox("SUMMER_MEDAL_SILVER", "Silver Medal", value=True),
         ui.input_checkbox("SUMMER_MEDAL_BRONZE", "Bronze Medal", value=True),
+        ui.input_radio_buttons(
+            "ATHLETE_GENDER",
+            "Select Genders",
+            {"a": "All (includes missing values)", "f": "Female", "m": "Male"},
+            selected="a",
+        ),
         ui.tags.hr(),
         ui.tags.section(
             ui.h3("Summer Olympics Table"),

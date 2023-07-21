@@ -37,6 +37,7 @@ def get_summer_server_functions(input, output, session):
         input.SUMMER_MEDAL_GOLD,
         input.SUMMER_MEDAL_SILVER,
         input.SUMMER_MEDAL_BRONZE,
+        input.ATHLETE_GENDER,
     )
     def _():
         df = original_df.copy()
@@ -44,6 +45,9 @@ def get_summer_server_functions(input, output, session):
         input_range = input.SUMMER_YEAR_RANGE() # this is a tuple 
         input_min = input_range[0]
         input_max = input_range[1]
+        
+        year_filter = (df["year"] >= input_min) & (df["year"] <= input_max)
+        df = df[year_filter]    
 
         """
         Filter the dataframe to bassed on selection of medals and year range
@@ -60,6 +64,12 @@ def get_summer_server_functions(input, output, session):
         display_medal = display_medal or ["Gold", "Silver", "Bronze"]
         medals_filter = df["medal"].isin(display_medal)
         df = df[medals_filter]
+        
+        input_gender = input.ATHLETE_GENDER()
+        gender_dict = {"a": ["M", "F"], "f": ["F"], "m": ["M"]}
+        if input_gender != "a":
+            gender_filter = df["gender"] == gender_dict[input_gender]
+            df = df[gender_filter]
 
         # Set the reactive value
         reactive_df.set(df)
