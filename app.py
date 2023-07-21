@@ -28,6 +28,10 @@ from relationships_server import get_relationships_server_functions
 from relationships_ui_inputs import get_relationships_inputs
 from relationships_ui_outputs import get_relationships_outputs
 
+from olympics_server import get_summer_server_functions
+from olympics_ui_inputs import get_summer_inputs
+from olympics_ui_outputs import get_summer_outputs
+
 from util_logger import setup_logger
 
 logger, logname = setup_logger(__name__)
@@ -62,6 +66,13 @@ app_ui = ui.page_navbar(
             get_relationships_outputs(),
         ),
     ),
+    ui.nav(
+        "Olympics",
+        ui.layout_sidebar(
+            get_summer_inputs(),
+            get_summer_outputs(),
+        ),
+    ),
     ui.nav(ui.a("About", href="https://github.com/jordanwheeler7")),
     ui.nav(ui.a("GitHub", href="https://github.com/jordanwheeler7/cintel-04-reactive")),
     ui.nav(ui.a("App", href="https://jordan-wheeler7.shinyapps.io/cintel-04-reactive/")),
@@ -79,6 +90,7 @@ def server(input, output, session):
     get_mtcars_server_functions(input, output, session)
     get_penguins_server_functions(input, output, session)
     get_relationships_server_functions(input, output, session)
+    get_flights_server_functions(input, output, session)
 
 
 # app = App(app_ui, server, debug=True)
