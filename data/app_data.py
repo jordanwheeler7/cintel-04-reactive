@@ -49,5 +49,9 @@ les_mis = pd.DataFrame(les_mis_data["links"])
 les_mis.to_excel("les_mis.xlsx")
 les_mis.to_csv("les_mis.csv")
 
+summer_df = pd.read_csv(data_folder.joinpath("summer.csv"))
+summer_df.to_excel(data_folder.joinpath("summer.xlsx"))
+
+
 # url="https://webpath/to/your/data.csv"
 # df=pd.read_csv(url)
